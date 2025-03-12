@@ -1,1 +1,28 @@
-bgc
+const express = require('express');
+const app = express();
+
+let port = 3000;
+
+app.listen(port, () => {
+   console.log(`Server running on ${port}`)
+  });
+
+  app.get("/", (req, res) => {
+    res.send("Hello World! / section");
+  });
+
+  app.get("/about", (req, res) => {
+    res.send("About Page get section");
+  });
+
+  app.get("/search", (req, res) => {
+    res.send("About Page search section");
+  });
+
+  app.get("/help", (req, res) => {
+    res.send("About Page help section");
+  });
+
+  app.get("*", (req, res) => {
+    res.send("404 Page");
+  });
